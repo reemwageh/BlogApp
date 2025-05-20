@@ -1,0 +1,45 @@
+# .gitattributes
+
+# Auto-detect line endings
+* text=auto eol=lf
+
+# Force LF for key files
+*.rb text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.erb text eol=lf
+*.rake text eol=lf
+*.json text eol=lf
+
+# Docker and compose files
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+
+# Ignore binary diffs
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.woff binary
+*.pdf binary
+
+# Mark schema as generated
+db/schema.rb linguist-generated
+
+# Vendored files
+vendor/** linguist-vendored
+
+# Encrypted credentials
+config/credentials/*.yml.enc diff=rails_credentials
+config/master.key filter=lfs diff=rails_credentials
+config/development.yml.enc diff=rails_credentials
+config/test.yml.enc diff=rails_credentials
+
+# For test and log files
+/log/* text eol=crlf
+/tmp/* text eol=crlf
+/public/uploads/* binary
+
+# Ignore diffs for large logs
+*.log diff
