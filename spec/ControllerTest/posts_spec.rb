@@ -14,13 +14,13 @@ RSpec.describe "Posts API", type: :request do
   end
 
   describe "POST /posts" do
-    let!(:tag) { create(:tag) } # Create a tag beforehand
+    let!(:tag) { create(:tag) }
 
     let(:valid_params) do
       {
         title: "New Post",
         body: "Post Body",
-        tag_ids: [tag.id] # Include one tag
+        tag_ids: [tag.id]
       }
     end
 

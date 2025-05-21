@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find_by(id: params[:id])
     if @post&.destroy
-      head :no_content # 204 No Content
+      head :no_content 
     else
       render json: { error: "Not authorized or post not found" }, status: :forbidden
     end
